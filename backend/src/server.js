@@ -7,7 +7,7 @@ import { and, eq } from "drizzle-orm";
 const app = express();
 app.use(express.json());
 
-const PORT = ENV.PORT || 5001;
+const PORT = ENV.PORT || 5001; 
 
 app.get("/api/test", (req, res) => {
   res.status(200).json({ success: true, message: "Hello from the backend" });
