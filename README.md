@@ -1,0 +1,1 @@
+A recipe mobile app, react native, nodejs, express, PostgreSQL, drizzle
