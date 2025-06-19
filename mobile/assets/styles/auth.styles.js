@@ -23,15 +23,19 @@ export const authStyles = StyleSheet.create({
     alignItems: "center",
   },
   image: {
-    width: 320,
+    width: 350,
     height: 320,
+
+    
   },
   title: {
     fontSize: 28,
     fontWeight: "bold",
     color: COLORS.text,
     textAlign: "center",
-    marginBottom: 40,
+    // marginBottom: 40,
+    marginBottom: 20,
+    marginTop: 30,
   },
   subtitle: {
     fontSize: 16,

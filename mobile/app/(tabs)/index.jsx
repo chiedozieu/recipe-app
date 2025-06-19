@@ -1,3 +1,4 @@
+import { useAuth } from "@clerk/clerk-expo";
 import { View, Text } from "react-native";
 
 const HomeScreen = () => {
