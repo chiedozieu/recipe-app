@@ -56,7 +56,7 @@ const VerifyEmail = ({ email, onBack }) => {
         >
           <View style={authStyles.imageContainer}>
             <Image
-              source={require("../../assets/images/chef2.jpg")}
+              source={require("../../assets/images/Chefv.jpg")}
               style={authStyles.image}
             />
           </View>
