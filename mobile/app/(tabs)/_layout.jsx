@@ -1,8 +1,15 @@
 import { Tabs } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
 import { COLORS } from "../../constants/colors";
+import { useClerk } from "@clerk/clerk-expo";
 
 const TabsLayout = () => {
+  const { isSignedIn, isLoaded } = useClerk();
+//  if (!isLoaded) return null
+  
+  if (!isSignedIn) {
+    return <Redirect href={"/(auth)/sign-in"} />;
+  }
   return (
     <Tabs
       screenOptions={{
@@ -28,8 +35,12 @@ const TabsLayout = () => {
         options={{
           title: "Recipes",
 
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="restaurant-outline" size={size} color={color} />
+          tabBarIcon: ({ color, size, focused }) => (
+            <Ionicons
+              name={focused ? "restaurant" : "restaurant-outline"}
+              size={size}
+              color={color}
+            />
           ),
         }}
       />
@@ -37,8 +48,12 @@ const TabsLayout = () => {
         name="search"
         options={{
           title: "Search",
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="search-outline" size={size} color={color} />
+          tabBarIcon: ({ color, size, focused }) => (
+            <Ionicons
+              name={focused ? "search" : "search-outline"}
+              size={size}
+              color={color}
+            />
           ),
         }}
       />
@@ -46,8 +61,12 @@ const TabsLayout = () => {
         name="favorites"
         options={{
           title: "Favorites",
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="heart-outline" size={size} color={color} />
+          tabBarIcon: ({ color, size, focused }) => (
+            <Ionicons
+              name={focused ? "heart" : "heart-outline"}
+              size={size}
+              color={color}
+            />
           ),
         }}
       />
